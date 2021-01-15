@@ -26,7 +26,7 @@ function App() {
 
       setCreateExpense(false)
     }
-  }, [newExpense])
+  }, [newExpense, createExpense, expenses, rest])
 
   return (
     <div className='container'>

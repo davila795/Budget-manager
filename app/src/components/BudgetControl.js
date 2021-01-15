@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
+import { checkBudget } from '../helpers'
 
 const BudgetControl = ({ budget, rest }) => {
     return (
@@ -7,11 +9,16 @@ const BudgetControl = ({ budget, rest }) => {
                 Budget: ${budget}
             </div>
 
-            <div className='alert'>
+            <div className={checkBudget(budget,rest)}>
                 Rest: ${rest}
             </div>
         </>
     );
+}
+
+BudgetControl.proptTypes = {
+    budget: PropTypes.number.isRequired,
+    rest:PropTypes.number.isRequired
 }
 
 export default BudgetControl;

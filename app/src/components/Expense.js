@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const Expense = ({ expense }) => {
     const { name, quantity } = expense
 
@@ -10,5 +12,8 @@ const Expense = ({ expense }) => {
     )
 };
 
+Expense.propTypes = {
+    expense: PropTypes.object.isRequired
+}
 
 export default Expense;
